@@ -1,0 +1,27 @@
+Documentation:
+  Enabled: false
+Rails:
+  Enabled: true
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/Gemfile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'Rakefile'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'script/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'vendor/**/*.rb'
+    - 'vendor/**/*'
+  UseCache: false
+  TargetRailsVersion: 5.2
+  TargetRubyVersion: 2.5
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+Style/FrozenStringLiteralComment:
+  Enabled: false

@@ -1,0 +1,6 @@
+language: ruby
+script:
+  - bundle exec rspec
+  - bundle exec rubocop --config .rubocop.yml
+rvm:
+  - 2.5.0

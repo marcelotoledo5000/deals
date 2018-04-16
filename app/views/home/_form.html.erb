@@ -1,0 +1,15 @@
+<%= form_for(@deal) do |f| %>
+  <div>
+    <%= f.label :customer, 'Customer' %>
+    <%= f.text_field :customer %>
+  </div>
+  <div>
+    <%= f.label :description, 'Description' %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :value, 'Value' %>
+    <%= f.text_field :value %>
+  </div>
+  <%= f.submit 'Add Deal' %>
+<% end %>

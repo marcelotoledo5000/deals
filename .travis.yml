@@ -1,12 +1,10 @@
+services:
+  - postgresql
+
 addons:
-  postgresql: '10'
-  apt:
-    packages:
-    - postgresql-10
-    - postgresql-client-10
+  postgresql: '9.6'
 
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
 
 language: ruby
@@ -15,6 +13,9 @@ rvm:
   - 2.5.0
 
 script:
-  - bundle exec rails rails db:reset db:setup db:migrate RAILS_ENV=test
+  - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
   - bundle exec rspec
   - bundle exec rubocop --config .rubocop.yml
+
+before_install:
+  - gem update --system

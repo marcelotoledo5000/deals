@@ -3,5 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @deal = Deal.new
+    @last_deal = Deal.last
+    @deals = Deal.all
   end
 end

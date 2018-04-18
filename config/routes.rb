@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to:'home#index'
+  root to:'deals#index'
 
-  resources :deals, only: [:create, :destroy, :edit, :new, :show, :update]
+  resources :deals
 end

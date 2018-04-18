@@ -1,0 +1,15 @@
+<h3>+ Deals:</h3>
+
+<div>
+  <%= render 'form' %>
+</div>
+
+<div>
+  <%= link_to 'Import Deals From Pipedrive', root_path %>
+</div>
+
+<div>
+  Current Deals: <%= @last_deal.nil? ? '' : @last_deal.value %>
+</div>
+
+<%= render partial: 'table', locals: { deal: @deals } %>

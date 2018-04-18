@@ -23,7 +23,7 @@
             <td><%= deal.value %></td>
             <td>
               <%= link_to 'Edit', edit_deal_path(deal) %> |
-              Destroy | Won | Lost
+              <%= link_to 'Destroy', deal_path(deal), method: :delete %> | Won | Lost
             </td>
           </tr>
         </tbody>

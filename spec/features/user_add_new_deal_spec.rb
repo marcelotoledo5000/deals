@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User add new deal' do
+feature 'User add a new deal' do
   scenario 'successfully' do
     user = create(:user)
     login_as user

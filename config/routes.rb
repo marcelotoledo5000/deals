@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   root to:'deals#index'
 
-  resources :deals
+  resources :deals do
+    post 'won', to: 'deals#won'
+    post 'lost', to: 'deals#lost'
+  end
 end

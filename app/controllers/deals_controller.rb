@@ -45,6 +45,22 @@ class DealsController < ApplicationController
     end
   end
 
+  def won
+    deal = Deal.find_by(id: params[:deal_id])
+    deal.won!
+    flash[:success] = 'Your deal was Won!'
+
+    redirect_to root_path
+  end
+
+  def lost
+    deal = Deal.find_by(id: params[:deal_id])
+    deal.lost!
+    flash[:success] = 'Your deal was Lost!'
+
+    redirect_to root_path
+  end
+
   private
 
   def deal_params

@@ -20,7 +20,6 @@ feature 'Create a user' do
     fill_in 'Password confirmation', with: '12345678'
     click_on 'Sign up'
 
-    # expect(page).to have_css('h2', text: 'Sign up')
     expect(page).to have_content('Welcome new@email.com')
     expect(page).to have_content('Log out')
     expect(page).not_to have_content('Log in')
@@ -37,7 +36,18 @@ feature 'Create a user' do
     expect(page).to have_content("Password can't be blank")
   end
 
-  scenario 'and login' do
+  scenario 'and wrong login' do
+    user = create(:user)
+
+    visit root_path
+    fill_in 'Email', with: 'wrong@email'
+    fill_in 'Password', with: user.password
+    click_on 'Log in'
+
+    expect(page).to have_content('Invalid Email or password')
+  end
+
+  scenario 'and login successfully' do
     user = create(:user)
 
     visit root_path

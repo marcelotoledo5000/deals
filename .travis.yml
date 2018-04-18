@@ -3,13 +3,8 @@ services:
 
 addons:
   postgresql: '9.6'
-  # apt:
-  #   packages:
-  #   - postgresql-10
-  #   - postgresql-client-10
 
 before_script:
-  # - psql -c 'create database travis;' -U postgres
   - cp config/database.yml.travis config/database.yml
 
 language: ruby
@@ -22,5 +17,5 @@ script:
   - bundle exec rspec
   - bundle exec rubocop --config .rubocop.yml
 
-# before_install:
-#   - gem update --system
+before_install:
+  - gem update --system

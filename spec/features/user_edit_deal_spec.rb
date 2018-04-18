@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User edit deal' do
+feature 'User edit a deal' do
   scenario 'successfully' do
     create(:deal)
     user = create(:user)

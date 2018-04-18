@@ -14,6 +14,13 @@ class DealsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    deal = Deal.find_by(id: params[:id])
+    flash[:success] = 'Your deal successfully destroyed!' if deal.destroy
+
+    redirect_to root_path
+  end
+
   def edit
     @deal = Deal.find_by(id: params[:id])
   end

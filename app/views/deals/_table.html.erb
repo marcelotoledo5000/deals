@@ -21,7 +21,10 @@
             <td><%= deal.status.camelcase %></td>
             <td><%= deal.closing_date_probability %></td>
             <td><%= deal.value %></td>
-            <td>Edit | Destroy | Won | Lost</td>
+            <td>
+              <%= link_to 'Edit', edit_deal_path(deal) %> |
+              Destroy | Won | Lost
+            </td>
           </tr>
         </tbody>
       <% end %>

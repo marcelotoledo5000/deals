@@ -15,7 +15,9 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/messages'%>
+    <% if flash.any? %>
+      <%= render 'shared/messages' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

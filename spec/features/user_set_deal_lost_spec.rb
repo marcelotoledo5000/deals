@@ -18,5 +18,6 @@ feature 'User set a deal as lost' do
     expect(page).to have_css('td', text: 'Lost')
     expect(page).to have_css('td', text: '03/03/18')
     expect(page).to have_css('td', text: 'US$ 2,5 B')
+    expect(deal).to be_lost
   end
 end

@@ -3,9 +3,9 @@
 <div>
   <%= render 'form' %>
 </div>
-
-<div class="btn btn-outline-success my-2 my-sm-0">
-  <%= link_to 'Import Deals From Pipedrive', root_path %>
+<br>
+<div>
+  <%= render 'modal_pipedrive' %>
 </div>
 
 <div>
@@ -18,8 +18,6 @@
     <%= submit_tag('Search', class: 'btn btn-outline-success my-2 my-sm-0') %>
   <% end %>
 </div>
-
-
 
 <div class="">
   <%= render partial: 'table', locals: { deal: @deals } %>

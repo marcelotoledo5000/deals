@@ -20,8 +20,8 @@ feature 'User search a deal' do
     click_on 'Search'
 
     expect(page).to have_css('td', text: target_deal.customer)
-    expect(page).not_to have_css('td', text: 'W&B')
-    expect(page).not_to have_css('td', text: 'Brand')
+    expect(page).to have_no_css('td', text: 'W&B')
+    expect(page).to have_no_css('td', text: 'Brand')
   end
 
   scenario 'more than one result' do
@@ -44,7 +44,7 @@ feature 'User search a deal' do
 
     expect(page).to have_css('td', text: target_deal.customer)
     expect(page).to have_css('td', text: 'W&B')
-    expect(page).not_to have_css('td', text: 'Brand')
+    expect(page).to have_no_css('td', text: 'Brand')
   end
 
   scenario 'and not found' do

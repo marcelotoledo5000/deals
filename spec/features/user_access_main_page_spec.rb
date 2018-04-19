@@ -11,9 +11,10 @@ feature 'User access main page' do
     expect(page).to have_content('Customer:')
     expect(page).to have_content('Description:')
     expect(page).to have_content('Value:')
+    expect(page).to have_button('Create Deal')
     expect(page).to have_link('Import Deals From Pipedrive', href: pipedrive)
     expect(page).to have_content('Current Deals:')
-    # expect(page).to have_content('Search')
+    expect(page).to have_button('Search')
     expect(page).to have_content("Don't have deals yet")
   end
 
@@ -26,7 +27,7 @@ feature 'User access main page' do
 
     expect(page).to have_link('Import Deals From Pipedrive', href: pipedrive)
     expect(page).to have_content('Current Deals: US$ 2,5 B')
-    # expect(page).to have_content('Search')
+    expect(page).to have_button('Search')
   end
 
   scenario 'should see your deals' do

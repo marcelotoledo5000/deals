@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User access main page' do
   scenario 'and dont have deals to show' do
-    pipedrive = '/'
     user = create(:user)
     login_as user
     visit root_path
@@ -12,20 +11,19 @@ feature 'User access main page' do
     expect(page).to have_content('Description:')
     expect(page).to have_content('Value:')
     expect(page).to have_button('Create Deal')
-    expect(page).to have_link('Import Deals From Pipedrive', href: pipedrive)
+    expect(page).to have_button('Import Deals From Pipedrive')
     expect(page).to have_content('Current Deals:')
     expect(page).to have_button('Search')
     expect(page).to have_content("Don't have deals yet")
   end
 
   scenario 'successfully' do
-    pipedrive = '/'
     user = create(:user)
     create(:deal)
     login_as user
     visit root_path
 
-    expect(page).to have_link('Import Deals From Pipedrive', href: pipedrive)
+    expect(page).to have_button('Import Deals From Pipedrive')
     expect(page).to have_content('Current Deals: US$ 2,5 B')
     expect(page).to have_button('Search')
   end

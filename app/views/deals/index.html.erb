@@ -4,7 +4,7 @@
   <%= render 'form' %>
 </div>
 
-<div>
+<div class="btn btn-outline-success my-2 my-sm-0">
   <%= link_to 'Import Deals From Pipedrive', root_path %>
 </div>
 
@@ -12,4 +12,15 @@
   Current Deals: <%= @last_deal.nil? ? '' : @last_deal.value %>
 </div>
 
-<%= render partial: 'table', locals: { deal: @deals } %>
+<div class="">
+  <%= form_tag(search_deals_path, method: 'get', class: 'form-inline my-2 my-lg-0' ) do %>
+    <%= text_field_tag(:q, params[:q], { class: 'form-control mr-sm-2' }) %>
+    <%= submit_tag('Search', class: 'btn btn-outline-success my-2 my-sm-0') %>
+  <% end %>
+</div>
+
+
+
+<div class="">
+  <%= render partial: 'table', locals: { deal: @deals } %>
+</div>

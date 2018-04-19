@@ -8,7 +8,7 @@ class DealsController < ApplicationController
     if @deal.save
       flash[:success] = 'Your deal was successfully sent!'
     else
-      flash[:alert] = 'You need to fill all fields!'
+      flash[:warning] = 'You need to fill all fields!'
     end
 
     redirect_to root_path
@@ -31,6 +31,20 @@ class DealsController < ApplicationController
     @deals = Deal.all
   end
 
+  def search
+    search = params[:q].downcase
+    deals = Deal.where('lower(customer) LIKE ? OR lower(description) LIKE ?',
+                       '%' + search + '%', '%' + search + '%')
+
+    if deals.empty?
+      flash[:warning] = 'Deal not found'
+
+      redirect_to root_path
+    else
+      @deals = deals
+    end
+  end
+
   def update
     deal = Deal.find_by(id: params[:id])
 
@@ -39,7 +53,7 @@ class DealsController < ApplicationController
       redirect_to root_path
     else
       @deal = deal
-      flash[:alert] = 'You need to fill all fields!'
+      flash[:warning] = 'You need to fill all fields!'
 
       render :edit
     end

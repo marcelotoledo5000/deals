@@ -10,7 +10,7 @@ feature 'Create a user' do
     expect(page).to have_css('label', text: 'Password')
     expect(page).to have_link('Sign up', href: '/users/sign_up')
     expect(page).to have_link('Forgot your password?', href: path)
-    expect(page).not_to have_content('Logout')
+    expect(page).to have_no_content('Logout')
   end
 
   scenario 'successfully' do
@@ -22,7 +22,7 @@ feature 'Create a user' do
 
     expect(page).to have_content('Welcome new@email.com')
     expect(page).to have_content('Log out')
-    expect(page).not_to have_content('Log in')
+    expect(page).to have_no_content('Log in')
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('+ Deals:')
   end
@@ -57,6 +57,6 @@ feature 'Create a user' do
 
     expect(page).to have_content('Welcome my@email.com')
     expect(page).to have_content('Log out')
-    expect(page).not_to have_content('Log in')
+    expect(page).to have_no_content('Log in')
   end
 end

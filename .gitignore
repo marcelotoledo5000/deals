@@ -28,3 +28,7 @@
 
 # Ignore coverage
 coverage
+
+# Secrets Files
+database.yml
+secrets.yml

@@ -68,7 +68,9 @@ test:
 
 production:
   <<: *default
-  database: deals_production
-  username: deals
+  # database: deals_production
+  # username: deals
+  database: d1glm1ga098svm
+  username: rsksbfiqsvsjxu
   password: <%= ENV['DEALS_DATABASE_PASSWORD'] %>
   pool: 10

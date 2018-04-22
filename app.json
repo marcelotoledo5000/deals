@@ -2,26 +2,15 @@
   "name": "deals",
   "description": "Manage deals",
   "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "LANG": {
-      "required": true
-    },
-    "RACK_ENV": {
-      "required": true
-    },
-    "RAILS_ENV": {
-      "required": true
-    },
-    "RAILS_LOG_TO_STDOUT": {
-      "required": true
-    },
-    "RAILS_SERVE_STATIC_FILES": {
-      "required": true
-    },
-    "SECRET_KEY_BASE": {
-      "required": true
-    }
+    "LANG": "en_US.UTF-8",
+    "RACK_ENV": "production",
+    "RAILS_ENV": "production",
+    "RAILS_LOG_TO_STDOUT": "enabled",
+    "RAILS_SERVE_STATIC_FILES": "enabled",
+    "SECRET_KEY_BASE": "SECRET_KEY_BASE"
   },
   "formation": {
     "worker": {
@@ -32,7 +21,7 @@
     }
   },
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql", "papertrail"
   ],
   "buildpacks": [
     {

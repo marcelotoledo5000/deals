@@ -3,17 +3,19 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
 
 
-<h3> This project uses:
+<h3>This project uses:</h3>
+
 * The Ruby language - version 2.5.1
 * The Rails gem - version 5.2
 * RSpec: 3.7
 * Capybara: 3.0
 * Rubocop: 0.54
 
-<h4> System dependencies:
-* Install and configure the database: [Postgresql: 10](https://www.postgresql.org/download/)
+<h4>System dependencies:</h4>
 
-<h4> To use:
+* Install and configure the database: [Postgresql-10](https://www.postgresql.org/download/)
+
+<h4>To use:</h4>
 
 Clone the project:
 
@@ -25,12 +27,13 @@ $ rails db:setup
 $ rails db:migrate
 </pre>
 
-<h4> To run the tests
-```rb
-$ bundle exec rspec
-```
+<h4>To run the tests</h4>
 
-<h4> To run app
+<pre>
+$ bundle exec rspec
+</pre>
+
+<h4>To run app</h4>
 
 To check that application runs properly by entering the command:
 
@@ -42,7 +45,7 @@ To see the application in action, open a browser window and navigate to [http://
 
 You should see a home page with a "log in" or "sign up" form.
 
-<h4> Deploy to Heroku
+<h4>Deploy to Heroku</h4>
 
 * Make a free account on [Heroku](https://www.heroku.com/)
 * Install [HerokuCli](https://devcenter.heroku.com/articles/heroku-cli)

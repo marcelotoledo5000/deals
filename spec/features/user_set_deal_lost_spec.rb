@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User set a deal as lost' do
   scenario 'successfully' do
-    deal = create(:deal)
     user = create(:user)
+    deal = create(:deal, user: user)
     login_as user
 
     visit root_path

@@ -19,7 +19,7 @@ feature 'User access main page' do
 
   scenario 'successfully' do
     user = create(:user)
-    create(:deal)
+    create(:deal, user: user)
     login_as user
     visit root_path
 
@@ -30,15 +30,15 @@ feature 'User access main page' do
 
   scenario 'should see your deals' do
     user = create(:user)
-    create(:deal)
+    create(:deal, user: user)
     deal2 = create(:deal, customer: 'W&B',
                           description: 'Multi Million Dollars Sale',
                           status: 1, closing_date_probability: 'In 25 days 70%',
-                          value: 'US$ 2,5 M')
+                          value: 'US$ 2,5 M', user: user)
     deal3 = create(:deal, customer: 'Brand',
                           description: 'Multi Thousand Dollars Sale',
                           status: 2, closing_date_probability: '03/02/2018',
-                          value: 'US$ 2,5 K')
+                          value: 'US$ 2,5 K', user: user)
     login_as user
 
     visit root_path

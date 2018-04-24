@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User destroy a deal' do
   scenario 'successfully' do
-    create(:deal)
     user = create(:user)
+    create(:deal, user: user)
     login_as user
 
     visit root_path

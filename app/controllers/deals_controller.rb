@@ -4,6 +4,7 @@ class DealsController < ApplicationController
   def create
     @deal = Deal.new deal_params
     @deal.closing_date_probability = default_time
+    @deal.user_id = current_user.id
 
     if @deal.save
       flash[:success] = 'Your deal was successfully sent!'
@@ -28,7 +29,7 @@ class DealsController < ApplicationController
   def index
     @deal = Deal.new
     @last_deal = Deal.last
-    @deals = Deal.all
+    @deals = Deal.where('user_id = ?', current_user)
   end
 
   def search
@@ -79,7 +80,7 @@ class DealsController < ApplicationController
 
   def deal_params
     params.require(:deal).permit(:customer, :description, :value, :status,
-                                 :closing_date_probability)
+                                 :closing_date_probability, :user_id)
   end
 
   def default_time

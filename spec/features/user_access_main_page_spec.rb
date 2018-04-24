@@ -19,7 +19,7 @@ feature 'User access main page' do
 
   scenario 'successfully' do
     user = create(:user)
-    create(:deal)
+    create(:deal, user: user)
     login_as user
     visit root_path
 
@@ -30,15 +30,15 @@ feature 'User access main page' do
 
   scenario 'should see your deals' do
     user = create(:user)
-    create(:deal)
+    create(:deal, user: user)
     deal2 = create(:deal, customer: 'W&B',
                           description: 'Multi Million Dollars Sale',
                           status: 1, closing_date_probability: 'In 25 days 70%',
-                          value: 'US$ 2,5 M')
+                          value: 'US$ 2,5 M', user: user)
     deal3 = create(:deal, customer: 'Brand',
                           description: 'Multi Thousand Dollars Sale',
                           status: 2, closing_date_probability: '03/02/2018',
-                          value: 'US$ 2,5 K')
+                          value: 'US$ 2,5 K', user: user)
     login_as user
 
     visit root_path
@@ -67,5 +67,30 @@ feature 'User access main page' do
     expect(page).to have_css('td', text: deal3.closing_date_probability)
     expect(page).to have_css('td', text: deal3.value)
     expect(page).to have_css('td', text: 'Edit | Destroy | Won | Lost')
+  end
+
+  scenario 'should cant view deals from other users' do
+    another_user = create(:user, email: 'other@email.com', password: '123456')
+    create(:deal, user: another_user)
+    user = create(:user)
+    deal1 = create(:deal, customer: 'W&B',
+                          description: 'Multi Million Dollars Sale',
+                          status: 1, closing_date_probability: 'In 25 days 70%',
+                          value: 'US$ 2,5 M', user: user)
+    deal2 = create(:deal, customer: 'Brand',
+                          description: 'Multi Thousand Dollars Sale',
+                          status: 2, closing_date_probability: '03/02/2018',
+                          value: 'US$ 2,5 K', user: user)
+    login_as user
+
+    visit root_path
+
+    expect(page).to have_no_css('td', text: 'Acme')
+    expect(page).to have_no_css('td', text: 'Multi Billion Dollars Sale')
+    expect(page).to have_no_css('td', text: 'Pending')
+    expect(page).to have_no_css('td', text: '03/03/18')
+    expect(page).to have_no_css('td', text: 'US$ 2,5 B')
+    expect(page).to have_css('td', text: deal1.customer)
+    expect(page).to have_css('td', text: deal2.customer)
   end
 end

@@ -5,5 +5,6 @@ FactoryBot.define do
     status 0
     closing_date_probability '03/03/18'
     value 'US$ 2,5 B'
+    user
   end
 end

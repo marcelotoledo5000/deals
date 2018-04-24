@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'User edit a deal' do
   scenario 'successfully' do
-    create(:deal)
     user = create(:user)
+    create(:deal, user: user)
     login_as user
     closing_date_probability = (Time.zone.today + 25.days).strftime('%d/%m/%Y')
 
@@ -25,8 +25,8 @@ feature 'User edit a deal' do
   end
 
   scenario 'fail' do
-    create(:deal)
     user = create(:user)
+    create(:deal, user: user)
     login_as user
 
     visit root_path

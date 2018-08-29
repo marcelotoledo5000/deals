@@ -29,13 +29,15 @@ class DealsController < ApplicationController
   def index
     @deal = Deal.new
     @last_deal = Deal.last
-    @deals = Deal.where('user_id = ?', current_user)
+    @deals = Deal.where('user_id = ?', current_user).order(created_at: :desc)
   end
 
   def search
     search = params[:q].downcase
-    deals = Deal.where('lower(customer) LIKE ? OR lower(description) LIKE ?',
-                       '%' + search + '%', '%' + search + '%')
+    deals = Deal.where('user_id = ?', current_user).where(
+      'lower(customer) LIKE ? OR lower(description) LIKE ?',
+      '%' + search + '%', '%' + search + '%'
+    ).order(created_at: :desc)
 
     if deals.empty?
       flash[:warning] = 'Deal not found'

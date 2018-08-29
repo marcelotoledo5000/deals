@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    # image: startx/sv-postgres:latest
+    # container_name: "service-postgres"
+    # volumes:
+    #   # - .:/var/lib/postgresql/data:Z
+    #   - "/tmp/container/logs/postgres:/logs"
+    #   - "/tmp/container/postgres:/data"
+    # ports:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    #   - "5432:5432"
+    # networks:
+    #   - private
+    # environment:
+    #   POSTGRESQL_ROOT_PASSWORD: "rootpassword"
+    #   POSTGRESQL_USER: "postgres"
+    #   POSTGRESQL_PASSWORD: "postgres"
+  server:
+    image: skygvinn/debian-ruby-nodejs
+    container_name: deals
+    ports:
+      - "3000:3000"
+    environment:
+      - BUNDLE_PATH=vendor/bundle
+      - BUNDLE_DISABLE_SHARED_GEMS=1
+    volumes:
+      - .:/var/www/deals:Z
+    working_dir: /var/www/deals
+    command: bundle exec rails s -b 0.0.0.0
+    depends_on:
+      - db

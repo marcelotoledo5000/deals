@@ -1,0 +1,3 @@
+#!/bin/bash
+# docker network create public 2> /dev/null || true
+docker-compose run --rm server script/development_bootstrap.sh

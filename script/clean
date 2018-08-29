@@ -1,0 +1,4 @@
+#!/bin/bash
+docker-compose run --rm server rm -fr ./vendor/bundle
+docker-compose down
+docker network rm public 2> /dev/null || true

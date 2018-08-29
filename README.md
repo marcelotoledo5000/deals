@@ -7,9 +7,10 @@
 
 * The Ruby language - version 2.5.1
 * The Rails gem - version 5.2
-* RSpec: 3.7
-* Capybara: 3.0
-* Rubocop: 0.54
+* RSpec: 3.8
+* Capybara: 3.6
+* Rubocop: 0.58.2
+* Postgresql: 10
 
 <h4>System dependencies:</h4>
 

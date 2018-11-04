@@ -2,6 +2,7 @@ class DealsController < ApplicationController
   before_action :authenticate_user!
 
   def create
+    binding.pry
     @deal = Deal.new deal_params
     @deal.closing_date_probability = default_time
     @deal.user_id = current_user.id

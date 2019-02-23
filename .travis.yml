@@ -17,7 +17,7 @@ before_script:
 language: ruby
 
 rvm:
-  - 2.5.1
+  - 2.6.0
 
 script:
   - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
@@ -26,6 +26,7 @@ script:
 
 before_install:
   - gem update --system
+  - gem install bundler
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

@@ -4,10 +4,6 @@ Rails:
   Enabled: true
 
 AllCops:
-  Include:
-    - '**/Rakefile'
-    - '**/Gemfile'
-    - '**/config.ru'
   Exclude:
     - 'db/**/*'
     - 'Rakefile'
@@ -20,8 +16,12 @@ AllCops:
     - 'vendor/**/*'
   UseCache: false
   TargetRailsVersion: 5.2
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+Layout/DotPosition:
+  EnforcedStyle: trailing

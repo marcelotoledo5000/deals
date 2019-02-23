@@ -2,14 +2,13 @@
 [![Code Climate](https://codeclimate.com/github/marcelotoledo5000/deals.svg)](https://codeclimate.com/github/marcelotoledo5000/deals)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
 
-
 <h3>This project uses:</h3>
 
-* The Ruby language - version 2.5.1
+* The Ruby language - version 2.6.0
 * The Rails gem - version 5.2
-* RSpec: 3.7
-* Capybara: 3.0
-* Rubocop: 0.54
+* RSpec: 3.8
+* Capybara: 3.13
+* Rubocop: 0.65
 
 <h4>System dependencies:</h4>
 

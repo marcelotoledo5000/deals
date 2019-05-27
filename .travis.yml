@@ -1,12 +1,17 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=141b17e20f44674f1cf65e51f69a32bd3621017fada2a74a3bcf4723b05a0339
+    - PGPORT=5433
 
 services:
   - postgresql
 
 addons:
-  postgresql: '9.6'
+  postgresql: '10'
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
 
 before_script:
   - cp config/database.yml.travis config/database.yml
@@ -17,7 +22,7 @@ before_script:
 language: ruby
 
 rvm:
-  - 2.6.0
+  - 2.6.3
 
 script:
   - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test

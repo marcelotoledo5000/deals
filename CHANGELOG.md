@@ -1,4 +1,14 @@
-# deals 0.0.13 (Feb 23, 2019) #
+# deals 0.0.14 (Mai 27, 2019) ##
+
+* Upgraded versions
+  * Ruby: from 2.6.0 to 2.6.3;
+  * Rails: from 5.2.2 to 6.0.0.rc1
+* Added Code Climate configurations
+* Fixed controller because Cops (Rubocop)
+
+  *Marcelo Toledo*
+
+## deals 0.0.13 (Feb 23, 2019) #
 
 * Added docker
 * Updated versions

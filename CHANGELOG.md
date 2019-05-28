@@ -2,7 +2,7 @@
 
 * Upgraded versions
   * Ruby: from 2.6.0 to 2.6.3;
-  * Rails: from 5.2.2 to 6.0.0.rc1
+  * Rails: from 5.2.2 to 5.2.3
 * Added Code Climate configurations
 * Fixed controller because Cops (Rubocop)
 

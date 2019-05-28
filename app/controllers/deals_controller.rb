@@ -1,12 +1,13 @@
 class DealsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_deal, only: %i[destroy edit lost update won]
 
   def create
-    @deal = Deal.new deal_params
-    @deal.closing_date_probability = default_time
-    @deal.user_id = current_user.id
+    deal = Deal.new deal_params
+    deal.closing_date_probability = DealsService.set_default_time
+    deal.user_id = current_user.id
 
-    if @deal.save
+    if deal.save
       flash[:success] = 'Your deal was successfully sent!'
     else
       flash[:warning] = 'You need to fill all fields!'
@@ -16,20 +17,24 @@ class DealsController < ApplicationController
   end
 
   def destroy
-    deal = Deal.find_by(id: params[:id])
     flash[:success] = 'Your deal successfully destroyed!' if deal.destroy
 
     redirect_to root_path
   end
 
-  def edit
-    @deal = Deal.find_by(id: params[:id])
-  end
+  def edit; end
 
   def index
     @deal = Deal.new
     @last_deal = Deal.last
     @deals = Deal.where('user_id = ?', current_user).order(created_at: :desc)
+  end
+
+  def lost
+    deal.lost!
+    flash[:success] = 'Your deal was Lost!'
+
+    redirect_to root_path
   end
 
   def search
@@ -48,8 +53,6 @@ class DealsController < ApplicationController
   end
 
   def update
-    deal = Deal.find_by(id: params[:id])
-
     if deal.update(deal_params)
       flash[:success] = 'Your deal successfully updated!'
       redirect_to root_path
@@ -62,33 +65,26 @@ class DealsController < ApplicationController
   end
 
   def won
-    deal = Deal.find_by(id: params[:deal_id])
     deal.won!
     flash[:success] = 'Your deal was Won!'
 
     redirect_to root_path
   end
 
-  def lost
-    deal = Deal.find_by(id: params[:deal_id])
-    deal.lost!
-    flash[:success] = 'Your deal was Lost!'
-
-    redirect_to root_path
-  end
-
   private
+
+  attr_accessor :deal
 
   def deal_params
     params.require(:deal).permit(:customer, :description, :value, :status,
                                  :closing_date_probability, :user_id)
   end
 
-  def default_time
-    (Time.zone.today + 30.days).strftime('%d/%m/%Y')
-  end
-
   def search_params
     params[:q].downcase
+  end
+
+  def set_deal
+    @deal = Deal.find_by(id: params[:id]) || Deal.find_by(id: params[:deal_id])
   end
 end

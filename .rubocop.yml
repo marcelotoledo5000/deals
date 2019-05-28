@@ -17,7 +17,6 @@ AllCops:
     - 'vendor/**/*.rb'
     - 'vendor/**/*'
   UseCache: false
-  # TargetRailsVersion: 5.2
   TargetRailsVersion: 6.0
   TargetRubyVersion: 2.6
 Metrics/BlockLength:

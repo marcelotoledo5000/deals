@@ -1,4 +1,18 @@
-# deals 0.0.13 (Feb 23, 2019) #
+# deals 0.0.14 (Mai 27, 2019) ##
+
+* Upgraded versions
+  * Ruby: from 2.6.0 to 2.6.3;
+  * Rails: from 5.2.2 to 5.2.3
+* Added Code Climate configurations
+* Fixed controller because Cops (Rubocop)
+* Fixed DEPRECATION WARNING by Devise
+* Fixed issues by Code Climate
+* Fixed Warning by [i18n](https://github.com/ruby-i18n/i18n/releases/tag/v1.1.0)
+* Improves some tests
+
+  *Marcelo Toledo*
+
+## deals 0.0.13 (Feb 23, 2019) #
 
 * Added docker
 * Updated versions

@@ -2,7 +2,7 @@ class Deal < ApplicationRecord
   belongs_to :user
 
   validates :customer, :description, :closing_date_probability, :value,
-            presence: { message: 'You need to fill all fields!' }
+            presence: true
 
   enum status: %i[pending won lost]
 end

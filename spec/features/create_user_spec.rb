@@ -55,7 +55,7 @@ feature 'Create a user' do
     fill_in 'Password', with: user.password
     click_on 'Log in'
 
-    expect(page).to have_content('Welcome my@email.com')
+    expect(page).to have_content("Welcome #{user.email}")
     expect(page).to have_content('Log out')
     expect(page).to have_no_content('Log in')
   end

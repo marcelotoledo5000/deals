@@ -1,61 +1,80 @@
+# Abount this project uses
+
 [![Build Status](https://api.travis-ci.org/marcelotoledo5000/deals.svg?branch=master)](https://travis-ci.org/marcelotoledo5000/deals.svg?branch=master)
 [![Code Climate](https://codeclimate.com/github/marcelotoledo5000/deals.svg)](https://codeclimate.com/github/marcelotoledo5000/deals)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
 
-<h3>This project uses:</h3>
+## Technical Informations and dependencies
 
-* The Ruby language - version 2.6.0
-* The Rails gem - version 5.2
-* RSpec: 3.8
-* Capybara: 3.13
-* Rubocop: 0.65
+* The Ruby language - version 2.6.3
+* The Rails gem     - version 5.2.3
+* Capybara:         - version 3.13
+* RSpec             - version 3.8.3
+* Rubocop           - version 0.70.0
+* PostgreSQL        - version 10
+* Docker            - version 18.09.5
+* Docker Compose    - version 1.24.0
 
-<h4>System dependencies:</h4>
-
-* Install and configure the database: [Postgresql-10](https://www.postgresql.org/download/)
-
-<h4>To use:</h4>
+## To use
 
 Clone the project:
 
-<pre>
-$ git clone git@github.com:marcelotoledo5000/deals.git
-$ cd deals
-$ bundle install
-$ rails db:setup
-$ rails db:migrate
-</pre>
+``` Shell
+git clone git@github.com:marcelotoledo5000/deals.git
+cd deals
+```
 
-<h4>To run the tests</h4>
+### With Docker (better option)
 
-<pre>
-$ bundle exec rspec
-</pre>
+``` Shell
+script/setup    # => development bootstrap, preparing containers
+script/server   # => starts server
+script/console  # => starts console
+script/test     # => running tests
+```
 
-<h4>To run app</h4>
+#### Running without Docker (not recommended!)
 
-To check that application runs properly by entering the command:
+If you prefer, you'll need to update `config/database.yml`:
 
-<pre>
-$ rails server
-</pre>
+``` Yaml
+# host: db        # when using docker
+host: localhost   # when using localhost
+```
 
-To see the application in action, open a browser window and navigate to [http://localhost:3000/](http://localhost:3000.)
+System dependencies
+
+* Install and configure the database: [Postgresql-10](https://www.postgresql.org/download/)
+
+And then:
+
+``` Shell
+gem install bundler         # => install the last Bundler version
+bundle install              # => install the project's gems
+rails db:setup db:migrate   # => prepare the database
+rails s                     # => starts server
+rails c                     # => starts console
+bundle exec rspec           # => to running tests
+```
+
+### To run app
+
+To see the application in action, starts the rails server to able [http://localhost:3000/](http://localhost:3000.)
 
 You should see a home page with a "log in" or "sign up" form.
 
-<h4>Deploy to Heroku</h4>
+### Deploy to Heroku
 
 * Make a free account on [Heroku](https://www.heroku.com/)
 * Install [HerokuCli](https://devcenter.heroku.com/articles/heroku-cli)
 
 From the Command Line, and in the project folder:
 
-<pre>
-$ heroku login
-$ heroku apps:create mydeals
-$ heroku run gem install bundler
-$ git push heroku master
-$ heroku run rake db:migrate
-$ heroku open
-</pre>
+``` bash
+heroku login
+heroku apps:create mydeals
+heroku run gem install bundler
+git push heroku master
+heroku run rake db:migrate
+heroku open
+```

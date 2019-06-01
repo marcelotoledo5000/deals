@@ -83,8 +83,8 @@ class DealsController < ApplicationController
   end
 
   def search_result(relation)
-    relation
-      .where('customer ILIKE ?', "%#{search_params}%")
-      .or(Deal.where('description ILIKE ?', "%#{search_params}%"))
+    relation.
+      where('customer ILIKE ?', "%#{search_params}%").
+      or(Deal.where('description ILIKE ?', "%#{search_params}%"))
   end
 end

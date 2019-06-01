@@ -84,8 +84,8 @@ class DealsController < ApplicationController
 
   def search_result
     Deal.where(user: current_user).
-      where('customer ILIKE ? OR description ILIKE ?',
-            '%' + search_params + '%', '%' + search_params + '%').
+      where('customer ILIKE ?', '%' + search_params + '%').
+      or(Deal.where('description ILIKE ?', '%' + search_params + '%')).
       order(created_at: :desc)
   end
 end

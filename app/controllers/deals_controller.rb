@@ -30,8 +30,8 @@ class DealsController < ApplicationController
 
     relation = Deal.where(user: current_user)
 
-    if search_params
-      relation = search_result(relation)
+    if search_params.present?
+      relation = relation.merge(search_relation)
 
       flash[:warning] = 'Deal not found' if relation.empty?
     end
@@ -82,8 +82,8 @@ class DealsController < ApplicationController
     @deal = Deal.find_by(id: params[:id]) || Deal.find_by(id: params[:deal_id])
   end
 
-  def search_result(relation)
-    relation.
+  def search_relation
+    Deal.
       where('customer ILIKE ?', "%#{search_params}%").
       or(Deal.where('description ILIKE ?', "%#{search_params}%"))
   end

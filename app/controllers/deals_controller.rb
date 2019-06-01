@@ -27,7 +27,16 @@ class DealsController < ApplicationController
   def index
     @deal = Deal.new
     @last_deal = Deal.last
-    @deals = Deal.where('user_id = ?', current_user).order(created_at: :desc)
+
+    if params[:q]
+      @deals = search_result
+      return unless @deals.empty?
+
+      flash[:warning] = 'Deal not found'
+      redirect_to root_path
+    else
+      @deals = Deal.where(user: current_user).order(created_at: :desc)
+    end
   end
 
   def lost
@@ -35,21 +44,6 @@ class DealsController < ApplicationController
     flash[:success] = 'Your deal was Lost!'
 
     redirect_to root_path
-  end
-
-  def search
-    deals = Deal.where('user_id = ?', current_user).where(
-      'lower(customer) LIKE ? OR lower(description) LIKE ?',
-      '%' + search_params + '%', '%' + search_params + '%'
-    ).order(created_at: :desc)
-
-    if deals.empty?
-      flash[:warning] = 'Deal not found'
-
-      redirect_to root_path
-    else
-      @deals = deals
-    end
   end
 
   def update
@@ -86,5 +80,12 @@ class DealsController < ApplicationController
 
   def set_deal
     @deal = Deal.find_by(id: params[:id]) || Deal.find_by(id: params[:deal_id])
+  end
+
+  def search_result
+    Deal.where(user: current_user).
+      where('customer ILIKE ?', '%' + search_params + '%').
+      or(Deal.where('description ILIKE ?', '%' + search_params + '%')).
+      order(created_at: :desc)
   end
 end

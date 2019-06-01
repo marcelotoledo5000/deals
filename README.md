@@ -7,10 +7,10 @@
 ## Technical Informations and dependencies
 
 * The Ruby language - version 2.6.3
-* The Rails gem     - version 5.2.3
-* Capybara:         - version 3.13
+* The Rails gem     - version 6.0.0.rc1
+* Capybara:         - version 3.22
 * RSpec             - version 3.8.3
-* Rubocop           - version 0.70.0
+* Rubocop           - version 0.71.0
 * PostgreSQL        - version 10
 * Docker            - version 18.09.5
 * Docker Compose    - version 1.24.0

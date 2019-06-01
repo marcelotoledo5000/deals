@@ -28,15 +28,15 @@ class DealsController < ApplicationController
     @deal = Deal.new
     @last_deal = Deal.last
 
-    if params[:q]
-      @deals = search_result
-      return unless @deals.empty?
+    relation = Deal.where(user: current_user)
 
-      flash[:warning] = 'Deal not found'
-      redirect_to root_path
-    else
-      @deals = Deal.where(user: current_user).order(created_at: :desc)
+    if search_params
+      relation = search_result(relation)
+
+      flash[:warning] = 'Deal not found' if relation.empty?
     end
+
+    @deals = relation.order(created_at: :desc)
   end
 
   def lost
@@ -75,17 +75,16 @@ class DealsController < ApplicationController
   end
 
   def search_params
-    params[:q].downcase
+    params[:q]&.downcase
   end
 
   def set_deal
     @deal = Deal.find_by(id: params[:id]) || Deal.find_by(id: params[:deal_id])
   end
 
-  def search_result
-    Deal.where(user: current_user).
-      where('customer ILIKE ?', '%' + search_params + '%').
-      or(Deal.where('description ILIKE ?', '%' + search_params + '%')).
-      order(created_at: :desc)
+  def search_result(relation)
+    relation.
+      where('customer ILIKE ?', "%#{search_params}%").
+      or(Deal.where('description ILIKE ?', "%#{search_params}%"))
   end
 end

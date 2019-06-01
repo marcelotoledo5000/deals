@@ -1,8 +1,14 @@
-# deals 0.0.15 (Mai 31, 2019)
+# deals 0.0.16 (Jun 01, 2019)
+
+* Refactored `deals_controller#index`
+* Updated Readme
+* Removed Dockerfile
+
+## deals 0.0.15 (Mai 31, 2019)
 
 * Upgraded Rails: from 5.2.3 to 6.0.0.rc1
 * Updated some other gems
-* Removed `search` action from `deals_controller.rb`
+* Removed `deals_controller#search`
 
 ## deals 0.0.14 (Mai 27, 2019)
 

@@ -1,19 +1,27 @@
-# About this project uses
+# **DEALS**
 
 [![Build Status](https://api.travis-ci.org/marcelotoledo5000/deals.svg?branch=master)](https://travis-ci.org/marcelotoledo5000/deals.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/maintainability)](https://codeclimate.com/github/marcelotoledo5000/deals/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
 
+## About this project
+
+The proposal of this project is to enable the user to control and follow up on their commercial goals, defined for each of their clients.
+
+To run on Heroku, [access here](https://mydeals.herokuapp.com/)
+
 ## Technical Informations and dependencies
 
-* The Ruby language - version 2.6.3
-* The Rails gem     - version 6.0.0.rc1
-* Capybara:         - version 3.22
-* RSpec             - version 3.8.3
-* Rubocop           - version 0.71.0
-* PostgreSQL        - version 10
-* Docker            - version 18.09.5
-* Docker Compose    - version 1.24.0
+``` code
+* The Ruby language   # version 2.6.3
+* The Rails gem       # version 6.0.0.rc1
+* Capybara:           # version 3.22
+* RSpec               # version 3.8.3
+* Rubocop             # version 0.71.0
+* PostgreSQL          # version 10
+* Docker              # version 18.09.5
+* Docker Compose      # version 1.24.0
+```
 
 ## To use
 
@@ -63,11 +71,15 @@ To see the application in action, starts the rails server to able [http://localh
 
 You should see a home page with a "log in" or "sign up" form.
 
+### Dockerfile
+
+[Dockerfile is here](https://github.com/marcelotoledo5000/Dockerfiles)
+
 ### Deploy to Heroku
 
 * Make a free account on [Heroku](https://www.heroku.com/)
 * Install [HerokuCli](https://devcenter.heroku.com/articles/heroku-cli)
-* To run on heroku, [access here](https://mydeals.herokuapp.com/)
+* To run on Heroku, [access here](https://mydeals.herokuapp.com/)
 
 From the Command Line, and in the project folder:
 

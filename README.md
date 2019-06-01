@@ -67,6 +67,7 @@ You should see a home page with a "log in" or "sign up" form.
 
 * Make a free account on [Heroku](https://www.heroku.com/)
 * Install [HerokuCli](https://devcenter.heroku.com/articles/heroku-cli)
+* To run on heroku, [access here](https://mydeals.herokuapp.com/)
 
 From the Command Line, and in the project folder:
 

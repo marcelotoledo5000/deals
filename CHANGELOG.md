@@ -4,11 +4,16 @@
 * Updated Readme
 * Removed Dockerfile
 
+
+  *Marcelo Toledo and Guilherme Henrique*
+
 ## deals 0.0.15 (Mai 31, 2019)
 
 * Upgraded Rails: from 5.2.3 to 6.0.0.rc1
 * Updated some other gems
 * Removed `deals_controller#search`
+
+  *Marcelo Toledo*
 
 ## deals 0.0.14 (Mai 27, 2019)
 

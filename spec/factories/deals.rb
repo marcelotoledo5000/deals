@@ -1,10 +1,12 @@
 FactoryBot.define do
   factory :deal do
-    customer { 'Acme' }
-    description { 'Multi Billion Dollars Sale' }
+    customer { Faker::Books::Dune.character }
+    description { Faker::Company.name }
     status { 0 }
-    closing_date_probability { '03/03/18' }
-    value { 'US$ 2,5 B' }
+    closing_date_probability do
+      (Time.zone.today + 30.days).strftime('%d/%m/%Y')
+    end
+    value { Faker::Commerce.price(500..100_000, as_string: true) }
     user
   end
 end

@@ -19,18 +19,18 @@ feature 'User access main page' do
 
   scenario 'successfully' do
     user = create(:user)
-    create(:deal, user: user)
+    deal = create(:deal, user: user)
     login_as user
     visit root_path
 
     expect(page).to have_button('Import Deals From Pipedrive')
-    expect(page).to have_content('Current Deals: US$ 2,5 B')
+    expect(page).to have_content("Current Deals: #{deal.value}")
     expect(page).to have_button('Search')
   end
 
   scenario 'should see your deals' do
     user = create(:user)
-    create(:deal, user: user)
+    deal = create(:deal, user: user)
     deal2 = create(:deal, customer: 'W&B',
                           description: 'Multi Million Dollars Sale',
                           status: 1, closing_date_probability: 'In 25 days 70%',
@@ -49,11 +49,11 @@ feature 'User access main page' do
     expect(page).to have_css('th', text: 'Closing Date/Probability')
     expect(page).to have_css('th', text: 'Value')
     expect(page).to have_css('th', text: 'Actions')
-    expect(page).to have_css('td', text: 'Acme')
-    expect(page).to have_css('td', text: 'Multi Billion Dollars Sale')
-    expect(page).to have_css('td', text: 'Pending')
-    expect(page).to have_css('td', text: '03/03/18')
-    expect(page).to have_css('td', text: 'US$ 2,5 B')
+    expect(page).to have_css('td', text: deal.customer)
+    expect(page).to have_css('td', text: deal.description)
+    expect(page).to have_css('td', text: deal.status.camelcase)
+    expect(page).to have_css('td', text: deal.closing_date_probability)
+    expect(page).to have_css('td', text: deal.value)
     expect(page).to have_css('td', text: 'Edit | Destroy | Won | Lost')
     expect(page).to have_css('td', text: deal2.customer)
     expect(page).to have_css('td', text: deal2.description)
@@ -71,7 +71,7 @@ feature 'User access main page' do
 
   scenario 'should cant view deals from other users' do
     another_user = create(:user, email: 'other@email.com', password: '123456')
-    create(:deal, user: another_user)
+    another_deal = create(:deal, user: another_user)
     user = create(:user)
     deal1 = create(:deal, customer: 'W&B',
                           description: 'Multi Million Dollars Sale',
@@ -85,11 +85,10 @@ feature 'User access main page' do
 
     visit root_path
 
-    expect(page).to have_no_css('td', text: 'Acme')
-    expect(page).to have_no_css('td', text: 'Multi Billion Dollars Sale')
-    expect(page).to have_no_css('td', text: 'Pending')
-    expect(page).to have_no_css('td', text: '03/03/18')
-    expect(page).to have_no_css('td', text: 'US$ 2,5 B')
+    expect(page).to have_no_css('td', text: another_deal.customer)
+    expect(page).to have_no_css('td', text: another_deal.description)
+    expect(page).to have_no_css('td', text: another_deal.status.camelcase)
+    expect(page).to have_no_css('td', text: another_deal.value)
     expect(page).to have_css('td', text: deal1.customer)
     expect(page).to have_css('td', text: deal2.customer)
   end

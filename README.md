@@ -91,3 +91,12 @@ git push heroku master
 heroku run rake db:migrate
 heroku open
 ```
+
+#### Pending actions
+
+* Fix pending scenarios
+* Connection with Pipedrive API
+* Set a layout using Bootstrap
+* Configure follow gems:
+  * Pundit
+  * Kaminari

@@ -1,9 +1,17 @@
-# deals 0.0.16 (Jun 01, 2019)
+# deals 0.0.17 (Jun 02, 2019)
+
+* Fixed `deals_controller#index` to the user can access just his own deals
+* Fixed order of `or` condition in search relation
+* Fixed value from a current deal from own deals
+* Updated factories and tests with random values
+
+  *Marcelo Toledo and Guilherme Henrique*
+
+## deals 0.0.16 (Jun 01, 2019)
 
 * Refactored `deals_controller#index`
 * Updated Readme
 * Removed Dockerfile
-
 
   *Marcelo Toledo and Guilherme Henrique*
 

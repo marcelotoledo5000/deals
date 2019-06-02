@@ -26,9 +26,8 @@ class DealsController < ApplicationController
 
   def index
     @deal = Deal.new
-    @last_deal = Deal.last
-
     relation = Deal.where(user: current_user)
+    @last_deal = relation.last
 
     if search_params.present?
       relation = relation.merge(search_relation)

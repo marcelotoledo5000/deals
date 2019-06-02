@@ -17,4 +17,7 @@ feature 'User destroy a deal' do
     expect(page).to have_no_css('td', text: 'US$ 7,5 M')
     expect(page).to have_content("Don't have deals yet")
   end
+
+  xscenario 'should cant delete deals from other users' do
+  end
 end

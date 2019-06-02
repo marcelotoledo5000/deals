@@ -11,13 +11,16 @@ feature 'User set a deal as won' do
 
     deal.reload
     expect(page).to have_content('Your deal was Won!')
-    expect(page).to have_content('Current Deals: US$ 2,5 B')
-    expect(page).to have_css('td', text: 'Acme')
-    expect(page).to have_css('td', text: 'Multi Billion Dollars Sale')
+    expect(page).to have_content("Current Deals: #{deal.value}")
+    expect(page).to have_css('td', text: deal.customer)
+    expect(page).to have_css('td', text: deal.description)
     expect(page).to have_no_css('td', text: 'Pending')
-    expect(page).to have_css('td', text: 'Won')
-    expect(page).to have_css('td', text: '03/03/18')
-    expect(page).to have_css('td', text: 'US$ 2,5 B')
+    expect(page).to have_css('td', text: deal.status.camelcase)
+    expect(page).to have_css('td', text: deal.closing_date_probability)
+    expect(page).to have_css('td', text: deal.value)
     expect(deal).to be_won
+  end
+
+  xscenario 'should cant won deals from other users' do
   end
 end

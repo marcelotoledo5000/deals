@@ -20,4 +20,7 @@ feature 'User set a deal as won' do
     expect(page).to have_css('td', text: deal.value)
     expect(deal).to be_won
   end
+
+  xscenario 'should cant won deals from other users' do
+  end
 end

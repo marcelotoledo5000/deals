@@ -20,4 +20,7 @@ feature 'User set a deal as lost' do
     expect(page).to have_css('td', text: deal.value)
     expect(deal).to be_lost
   end
+
+  xscenario 'should cant lost deals from other users' do
+  end
 end

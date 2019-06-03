@@ -1,4 +1,12 @@
-# deals 0.0.17 (Jun 02, 2019)
+# deals 0.0.18 (Jun 02, 2019)
+
+* Readme updated to use travis-ci.com instead of travis-ci.org
+* Set cache to build on travis.yml
+* Fixed development bootstrap script
+
+  *Marcelo Toledo*
+
+## deals 0.0.17 (Jun 02, 2019)
 
 * Fixed `deals_controller#index` to the user can access just his own deals
 * Fixed order of `or` condition in search relation

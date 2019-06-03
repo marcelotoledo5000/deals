@@ -1,6 +1,6 @@
 # **DEALS**
 
-[![Build Status](https://api.travis-ci.org/marcelotoledo5000/deals.svg?branch=master)](https://travis-ci.org/marcelotoledo5000/deals.svg?branch=master)
+[![Build Status](https://api.travis-ci.com/marcelotoledo5000/deals.svg?branch=master)](https://travis-ci.com/marcelotoledo5000/deals.svg?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/maintainability)](https://codeclimate.com/github/marcelotoledo5000/deals/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
 
@@ -97,6 +97,6 @@ heroku open
 * Fix pending scenarios
 * Connection with Pipedrive API
 * Set a layout using Bootstrap
-* Configure follow gems:
+* Set the following gems:
   * Pundit
   * Kaminari

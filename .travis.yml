@@ -21,6 +21,8 @@ before_script:
 
 language: ruby
 
+cache: bundler
+
 rvm:
   - 2.6.3
 

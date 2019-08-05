@@ -1,4 +1,13 @@
-# deals 0.0.18 (Jun 02, 2019)
+# deals 0.0.19 (Aug 04, 2019)
+
+* Updated Rubocop
+* Changed Docker image from Debian to Alpine
+* Added Webpacker
+* Fixed configs to Rails 6.0
+
+  *Marcelo Toledo*
+
+## deals 0.0.18 (Jun 02, 2019)
 
 * Readme updated to use travis-ci.com instead of travis-ci.org
 * Set cache to build on travis.yml

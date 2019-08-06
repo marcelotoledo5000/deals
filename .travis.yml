@@ -1,3 +1,5 @@
+dist: trusty
+
 env:
   global:
     - CC_TEST_REPORTER_ID=141b17e20f44674f1cf65e51f69a32bd3621017fada2a74a3bcf4723b05a0339

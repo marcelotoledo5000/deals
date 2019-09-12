@@ -1,4 +1,10 @@
-# deals 0.0.19 (Aug 04, 2019)
+# deals 0.0.20 (Sep 12, 2019)
+
+* Updated gems
+
+  *Marcelo Toledo*
+
+## deals 0.0.19 (Aug 04, 2019)
 
 * Updated Rubocop
 * Changed Docker image from Debian to Alpine

@@ -14,13 +14,13 @@ To run on Heroku, [access here](https://mydeals.herokuapp.com/)
 
 ``` code
 * The Ruby language   # version 2.6.3
-* The Rails gem       # version 6.0.0.rc1
-* Capybara:           # version 3.22
-* RSpec               # version 3.8.3
-* Rubocop             # version 0.71.0
+* The Rails gem       # version 6.0
+* Capybara:           # version 3.28
+* RSpec               # version 4.0.0.beta2
+* Rubocop             # version 0.74.0
 * PostgreSQL          # version 10
-* Docker              # version 18.09.5
-* Docker Compose      # version 1.24.0
+* Docker              # version 19.03.1
+* Docker Compose      # version 1.24.1
 ```
 
 ## To use
@@ -59,6 +59,7 @@ And then:
 ``` Shell
 gem install bundler         # => install the last Bundler version
 bundle install              # => install the project's gems
+rails webpacker:install     # => configure webpacker
 rails db:setup db:migrate   # => prepare the database
 rails s                     # => starts server
 rails c                     # => starts console

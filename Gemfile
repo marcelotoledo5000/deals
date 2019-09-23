@@ -22,7 +22,7 @@ group :development, :test do
   gem 'capybara', '~> 3.29'
   gem 'database_cleaner', '~> 1.7'
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.2'
-  gem 'faker', '~> 2.3'
+  gem 'faker', '~> 2.4'
   gem 'pry-byebug', '~> 3.7'
   gem 'rails_best_practices', '~> 1.19', '>= 1.19.4'
   gem 'rspec-rails', '~> 4.0.0.beta2'

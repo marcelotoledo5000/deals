@@ -4,5 +4,5 @@ class Deal < ApplicationRecord
   validates :customer, :description, :closing_date_probability, :value,
             presence: true
 
-  enum status: %i[pending won lost]
+  enum status: { pending: 0, won: 1, lost: 2 }
 end

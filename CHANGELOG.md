@@ -1,4 +1,12 @@
-# deals 0.0.20 (Sep 12, 2019)
+# deals 0.0.21 (Sep 23, 2019)
+
+* Added rubocop-rspec
+* Bump faker from 2.3 to 2.4
+* Minor adjustments to scripts
+
+  *Marcelo Toledo*
+
+## deals 0.0.20 (Sep 12, 2019)
 
 * Updated gems
 

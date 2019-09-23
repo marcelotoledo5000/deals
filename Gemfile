@@ -29,6 +29,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
+  gem 'rubocop-rspec'
   gem 'rubycritic'
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
   gem 'simplecov'

@@ -1,6 +1,7 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 
 Documentation:
   Enabled: false
@@ -30,3 +31,9 @@ Style/ClassAndModuleChildren:
   EnforcedStyle: compact
 Layout/DotPosition:
   EnforcedStyle: trailing
+Capybara/FeatureMethods:
+  EnabledMethods: ['feature', 'scenario', 'xscenario','given', 'background']
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false

@@ -15,8 +15,6 @@ gem 'rails', '~> 6.0'
 gem 'sass-rails', '~> 6.0'
 gem 'turbolinks', '~> 5.2'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
-# gem 'datadog', '~> 0.1.0.alpha'
-# gem 'ddtrace', '~> 0.27.0'
 
 group :development, :test do
   gem 'capybara', '~> 3.29'

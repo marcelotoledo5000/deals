@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.5'
 
 gem 'bootsnap', '~> 1.4', '>= 1.4.5', require: false
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
@@ -12,7 +12,6 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'pg', '~> 1.1', '>= 1.1.4'
 gem 'puma', '~> 4.1', '>= 4.1.1'
 gem 'rails', '~> 6.0'
-gem 'sass-rails', '~> 6.0'
 gem 'turbolinks', '~> 5.2'
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
 

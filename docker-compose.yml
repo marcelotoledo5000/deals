@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
   server:
-    image: skygvinn/alpine-ruby2.6-nodejs:v1.2
+    image: skygvinn/alpine-ruby2.6.5-nodejs:v1.3
     container_name: deals
     ports:
       - "3000:3000"

@@ -1,7 +1,7 @@
-# deals 0.0.22 (Dec 15, 2019)
+# deals 0.1.0 (Dec 26, 2019)
 
 * Added rubocop-rspec
-* Bump faker from 2.3 to 2.4
+* Bump a lot gems
 * Minor adjustments to scripts
 
   *Marcelo Toledo*

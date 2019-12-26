@@ -1,4 +1,10 @@
-# deals 0.1.0 (Dec 26, 2019)
+# deals 0.1.1 (Dec 26, 2019)
+
+* Fixes issues raised by CodeClimate
+
+  *Marcelo Toledo*
+
+## deals 0.1.0 (Dec 26, 2019)
 
 * Upgrade Ruby version
 * Bump a lot gems

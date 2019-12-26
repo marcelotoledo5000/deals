@@ -1,8 +1,10 @@
 # deals 0.1.0 (Dec 26, 2019)
 
-* Added rubocop-rspec
+* Upgrade Ruby version
 * Bump a lot gems
-* Minor adjustments to scripts
+* Fix travis.yml
+* Fix rubocop.yml
+* Update Readme
 
   *Marcelo Toledo*
 

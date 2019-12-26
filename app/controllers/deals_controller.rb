@@ -1,6 +1,13 @@
+# frozen_string_literal: true
+
 class DealsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_deal, only: %i[destroy edit lost update won]
+
+  # TODO: add this messages to locale
+  SUCCESS_MSG = 'Your deal was successfully sent!'
+  WARNING_MSG = 'You need to fill all fields!'
+  DESTROYED_MSG = 'Your deal successfully destroyed!'
 
   def create
     deal = Deal.new deal_params
@@ -8,16 +15,16 @@ class DealsController < ApplicationController
     deal.user_id = current_user.id
 
     if deal.save
-      flash[:success] = 'Your deal was successfully sent!'
+      flash[:success] = SUCCESS_MSG
     else
-      flash[:warning] = 'You need to fill all fields!'
+      flash[:warning] = WARNING_MSG
     end
 
     redirect_to root_path
   end
 
   def destroy
-    flash[:success] = 'Your deal successfully destroyed!' if deal.destroy
+    flash[:success] = DESTROYED_MSG if deal.destroy
 
     redirect_to root_path
   end

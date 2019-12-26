@@ -1,4 +1,14 @@
-# deals 0.0.21 (Sep 23, 2019)
+# deals 0.1.0 (Dec 26, 2019)
+
+* Upgrade Ruby version
+* Bump a lot gems
+* Fix travis.yml
+* Fix rubocop.yml
+* Update Readme
+
+  *Marcelo Toledo*
+
+## deals 0.0.21 (Sep 23, 2019)
 
 * Added rubocop-rspec
 * Bump faker from 2.3 to 2.4

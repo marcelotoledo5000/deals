@@ -8,6 +8,7 @@ describe Deal, type: :model do
   it { is_expected.to validate_presence_of(:description) }
   it { is_expected.to validate_presence_of(:closing_date_probability) }
   it { is_expected.to validate_presence_of(:value) }
+
   it do
     expect(deal).to define_enum_for(:status).
       with_values(%i[pending won lost])

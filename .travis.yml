@@ -33,7 +33,6 @@ cache:
     - node_modules
 
 script:
-  - bundle exec rails webpacker:install
   - bundle exec rails db:reset db:setup db:migrate
   - bundle exec rspec
   - bundle exec rubocop --config .rubocop.yml
@@ -47,7 +46,6 @@ before_install:
   - sudo apt-get install -y -qq yarn
   - gem update --system
   - gem install bundler
-  # - gem install bundler -v '2.1.0'
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

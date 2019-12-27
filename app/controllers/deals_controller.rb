@@ -29,16 +29,17 @@ class DealsController < ApplicationController
 
   def index
     @deal = Deal.new
-    relation = Deal.where(user: current_user)
-    @last_deal = relation.last
 
-    if search_params.present?
-      relation = relation.merge(search_relation)
+    Deal.where(user: current_user).then do |deals|
+      @last_deal = deals.last
 
-      flash[:warning] = 'Deal not found' if relation.empty?
+      if search_params.present?
+        deals = deals.merge(search_deals)
+        flash[:warning] = 'Deal not found' if deals.empty?
+      end
+
+      @deals = deals.order(created_at: :desc)
     end
-
-    @deals = relation.order(created_at: :desc)
   end
 
   def lost
@@ -84,7 +85,7 @@ class DealsController < ApplicationController
     @deal = Deal.find_by(id: params[:id]) || Deal.find_by(id: params[:deal_id])
   end
 
-  def search_relation
+  def search_deals
     Deal.
       where('customer ILIKE ?', "%#{search_params}%").
       or(Deal.where('description ILIKE ?', "%#{search_params}%"))

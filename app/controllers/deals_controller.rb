@@ -10,17 +10,13 @@ class DealsController < ApplicationController
   DESTROYED_MSG = 'Your deal successfully destroyed!'
 
   def create
-    deal = Deal.new deal_params
-    deal.closing_date_probability = DealsService.set_default_time
-    deal.user_id = current_user.id
+    Deal.create(deal_params).then do |deal|
+      deal.closing_date_probability = DealsService.set_default_time
+      deal.user_id = current_user.id
+      deal.save ? flash[:success] = SUCCESS_MSG : flash[:warning] = WARNING_MSG
 
-    if deal.save
-      flash[:success] = SUCCESS_MSG
-    else
-      flash[:warning] = WARNING_MSG
+      redirect_to root_path
     end
-
-    redirect_to root_path
   end
 
   def destroy

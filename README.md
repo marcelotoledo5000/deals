@@ -6,7 +6,8 @@
 
 ## About this project
 
-The proposal of this project is to enable the user to control and follow up on their commercial goals, defined for each of their clients.
+The proposal of this project is to enable the user to control and follow up on
+their commercial goals, defined for each of their clients.
 
 To run on Heroku, [access here](https://mydeals.herokuapp.com/)
 

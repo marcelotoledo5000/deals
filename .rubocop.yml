@@ -3,37 +3,50 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
-Style/Documentation:
-  Enabled: false
-Rails:
-  Enabled: true
-
 AllCops:
   Exclude:
-    - 'db/**/*'
-    - 'Rakefile'
-    - 'config/**/*'
     - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
     - 'node_modules/**/*'
+    - 'Rakefile'
     - 'script/**/*'
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
-    - 'vendor/**/*.rb'
     - 'vendor/**/*'
   UseCache: false
   TargetRailsVersion: 6.0
-  TargetRubyVersion: 2.6.5
-Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
-Style/FrozenStringLiteralComment:
-  Enabled: false
-Style/ClassAndModuleChildren:
-  EnforcedStyle: compact
-Layout/DotPosition:
-  EnforcedStyle: trailing
+  TargetRubyVersion: 2.7.0
+
 Capybara/FeatureMethods:
   EnabledMethods: ['feature', 'scenario', 'xscenario','given', 'background']
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'let']
+
+Rails:
+  Enabled: true
+
 RSpec/ExampleLength:
   Enabled: false
+
 RSpec/MultipleExpectations:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true

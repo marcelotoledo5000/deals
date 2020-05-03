@@ -15,11 +15,11 @@ To run on Heroku, [access here](https://mydeals.herokuapp.com/)
 * The Ruby language   # version 2.7.0
 * The Rails gem       # version 6.0
 * Capybara:           # version 3.30
-* RSpec               # version 3.9.0
+* RSpec               # version 4.0.0
 * Rubocop             # version 0.82.0
 * PostgreSQL          # version 10
-* Docker              # version 19.03.5-ce
-* Docker Compose      # version 1.25.0
+* Docker              # version 19.03.8-ce
+* Docker Compose      # version 1.25.5
 ```
 
 ## To use

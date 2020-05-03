@@ -1,4 +1,15 @@
-# deals 0.1.1 (Dec 26, 2019)
+# deals 0.1.2 (Mai 03, 2020)
+
+* Update Ruby version
+* Update Rubocop and Cops
+* Added `codecov` gem
+* Added some badges to README.md
+* Updated some gems
+* Updated docker-compose
+
+  *Marcelo Toledo*
+
+## deals 0.1.1 (Dec 26, 2019)
 
 * Fixes issues raised by CodeClimate
 

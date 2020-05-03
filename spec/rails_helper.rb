@@ -5,8 +5,20 @@ ENV['RAILS_ENV'] ||= 'test'
 # Personal Configs
 require 'database_cleaner'
 require 'simplecov'
-SimpleCov.start
-###
+require 'codecov'
+
+SimpleCov.start do
+  enable_coverage :branch
+  SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
+    [
+      SimpleCov::Formatter::HTMLFormatter,
+      SimpleCov::Formatter::Codecov
+    ]
+  )
+end
+
+require 'spec_helper'
+ENV['RAILS_ENV'] ||= 'test'
 
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production

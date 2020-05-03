@@ -1,8 +1,6 @@
 # **DEALS**
 
-[![Build Status](https://api.travis-ci.com/marcelotoledo5000/deals.svg?branch=master)](https://travis-ci.com/marcelotoledo5000/deals.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/maintainability)](https://codeclimate.com/github/marcelotoledo5000/deals/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
+[![codebeat badge][codebeat-badge]][codebeat] [![Maintainability][codeclimate-badge]][codeclimate] [![Coverage][codecov-badge]][codecov] [![Build][travis-badge]][travis]
 
 ## About this project
 
@@ -102,3 +100,15 @@ heroku open
 * Set the following gems:
   * Pundit
   * Kaminari
+
+[codebeat-badge]: https://codebeat.co/badges/79b5a436-3241-4d15-b961-04c6fddc6001
+[codebeat]: https://codebeat.co/projects/github-com-marcelotoledo5000-deals-master
+
+[codeclimate-badge]: https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/maintainability
+[codeclimate]: https://codeclimate.com/github/marcelotoledo5000/deals/maintainability
+
+[codecov-badge]: https://codecov.io/gh/marcelotoledo5000/deals/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/marcelotoledo5000/deals
+
+[travis-badge]: https://travis-ci.com/marcelotoledo5000/deals.svg?branch=master
+[travis]: https://travis-ci.com/marcelotoledo5000/deals

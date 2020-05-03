@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :deal do
     customer { Faker::Books::Dune.character }

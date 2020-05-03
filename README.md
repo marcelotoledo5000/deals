@@ -1,8 +1,6 @@
 # **DEALS**
 
-[![Build Status](https://api.travis-ci.com/marcelotoledo5000/deals.svg?branch=master)](https://travis-ci.com/marcelotoledo5000/deals.svg?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/maintainability)](https://codeclimate.com/github/marcelotoledo5000/deals/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/test_coverage)](https://codeclimate.com/github/marcelotoledo5000/deals/test_coverage)
+[![codebeat badge][codebeat-badge]][codebeat] [![Maintainability][codeclimate-badge]][codeclimate] [![Coverage][codecov-badge]][codecov] [![Build][travis-badge]][travis]
 
 ## About this project
 
@@ -14,14 +12,14 @@ To run on Heroku, [access here](https://mydeals.herokuapp.com/)
 ## Technical Informations and dependencies
 
 ``` code
-* The Ruby language   # version 2.6.5
+* The Ruby language   # version 2.7.0
 * The Rails gem       # version 6.0
 * Capybara:           # version 3.30
-* RSpec               # version 3.9.0
-* Rubocop             # version 0.78.0
+* RSpec               # version 4.0.0
+* Rubocop             # version 0.82.0
 * PostgreSQL          # version 10
-* Docker              # version 19.03.5-ce
-* Docker Compose      # version 1.25.0
+* Docker              # version 19.03.8-ce
+* Docker Compose      # version 1.25.5
 ```
 
 ## To use
@@ -102,3 +100,15 @@ heroku open
 * Set the following gems:
   * Pundit
   * Kaminari
+
+[codebeat-badge]: https://codebeat.co/badges/79b5a436-3241-4d15-b961-04c6fddc6001
+[codebeat]: https://codebeat.co/projects/github-com-marcelotoledo5000-deals-master
+
+[codeclimate-badge]: https://api.codeclimate.com/v1/badges/ee89b0339d22fa938cd5/maintainability
+[codeclimate]: https://codeclimate.com/github/marcelotoledo5000/deals/maintainability
+
+[codecov-badge]: https://codecov.io/gh/marcelotoledo5000/deals/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/marcelotoledo5000/deals
+
+[travis-badge]: https://travis-ci.com/marcelotoledo5000/deals.svg?branch=master
+[travis]: https://travis-ci.com/marcelotoledo5000/deals

@@ -9,7 +9,7 @@ gem 'bootsnap', '~> 1.4', require: false
 gem 'bootstrap', '~> 4.3'
 gem 'devise', '~> 4.7'
 gem 'dotenv-rails', '~> 2.7'
-gem 'faraday', '~> 1.0.0.pre.rc1'
+gem 'faraday', '~> 1.0'
 gem 'jbuilder', '~> 2.9'
 gem 'jquery-rails', '~> 4.3'
 gem 'pg', '~> 1.2'

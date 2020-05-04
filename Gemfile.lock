@@ -365,7 +365,7 @@ DEPENDENCIES
   dotenv-rails (~> 2.7)
   factory_bot_rails (~> 5.2)
   faker (~> 2.11)
-  faraday (~> 1.0.0.pre.rc1)
+  faraday (~> 1.0)
   jbuilder (~> 2.9)
   jquery-rails (~> 4.3)
   listen (~> 3.2)

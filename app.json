@@ -10,7 +10,8 @@
     "RAILS_ENV": "production",
     "RAILS_LOG_TO_STDOUT": "enabled",
     "RAILS_SERVE_STATIC_FILES": "enabled",
-    "SECRET_KEY_BASE": "SECRET_KEY_BASE"
+    "SECRET_KEY_BASE": "SECRET_KEY_BASE",
+    "RUBYOPT": "-W0"
   },
   "formation": {
     "worker": {

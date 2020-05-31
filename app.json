@@ -2,7 +2,7 @@
   "name": "deals",
   "description": "Manage deals",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "yarn upgrade && bundle exec rails webpacker:install && yarn install --check-files && bundle exec rake db:migrate"
   },
   "env": {
     "LANG": "en_US.UTF-8",

@@ -1,4 +1,24 @@
-# deals 0.1.2 (Mai 03, 2020)
+# deals 0.2.0 (Mai 31, 2020)
+
+* Organize some files
+* Update app.json
+* Setup Webpacker and remove Assets
+* Bump a lot of gems
+* Setup Yarn dependencies
+* Update packages
+* Update puma.rb
+* Update .gitignore
+* Remove assets js compressor: Uglifier
+* Adjustments to heroku setup
+* Update development_bootstrap
+* Fix gem version: sprockets
+* Update faraday gem
+* Add engines to update heroku
+* Bump puma from 4.3.3 to 4.3.5
+
+  *Marcelo Toledo*
+
+## deals 0.1.2 (Mai 03, 2020)
 
 * Update Ruby version
 * Update Rubocop and Cops

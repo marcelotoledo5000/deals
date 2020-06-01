@@ -9,11 +9,11 @@
 import "stylesheets/application"
 import "core-js/stable"
 import "regenerator-runtime/runtime"
+import Rails from 'rails-ujs';
+import Turbolinks from 'turbolinks';
 
-//= require_self
-//= require rails-ujs
-//= require turbolinks
-//= require_tree .
+Rails.start();
+Turbolinks.start();
 
 const images = require.context('../images', true)
 const imagePath = (name) => images(name, true)

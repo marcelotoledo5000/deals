@@ -6,7 +6,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'bootsnap', '~> 1.4', require: false
-gem 'bootstrap', '~> 4.3'
 gem 'devise', '~> 4.7'
 gem 'dotenv-rails', '~> 2.7'
 gem 'faraday', '~> 1.0'

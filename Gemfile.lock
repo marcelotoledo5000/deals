@@ -364,7 +364,7 @@ DEPENDENCIES
   simplecov
   spring
   spring-watcher-listen (~> 2.0)
-  sprockets (= 3.7)
+  sprockets (~> 3.7)
   turbolinks (~> 5.2)
   web-console (~> 4.0)
   webpacker (~> 4.0)

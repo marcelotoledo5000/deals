@@ -9,7 +9,6 @@ chown -R $USER:$USER .
 
 echo "Configuring webpacker"
 yarn upgrade
-bundle exec rails webpacker:install
 yarn install --check-files
 
 echo "Creating databases"

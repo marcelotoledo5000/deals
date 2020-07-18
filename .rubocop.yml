@@ -16,7 +16,7 @@ AllCops:
     - 'vendor/**/*'
   UseCache: false
   TargetRailsVersion: 6.0
-  TargetRubyVersion: 2.7.0
+  TargetRubyVersion: 2.7.1
 
 Capybara/FeatureMethods:
   EnabledMethods: ['feature', 'scenario', 'xscenario','given', 'background']

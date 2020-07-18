@@ -26,7 +26,7 @@ before_script:
 language: ruby
 
 rvm:
-  - 2.7.0
+  - 2.7.1
 
 node_js:
   - 14
@@ -38,7 +38,6 @@ cache:
     - node_modules
 
 script:
-  - bundle exec rails webpacker:install
   - yarn install --check-files
   - bundle exec rails db:reset db:setup db:migrate
   - bundle exec rspec
@@ -47,13 +46,13 @@ script:
 sudo: required
 
 before_install:
-  - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+  - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
   - sudo apt install nodejs
-  - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
-  # - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  # - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  # - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
+  - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.4
   # - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  - sudo sh -c 'echo "deb https://dl.yarnpkg.com/debian/ stable main" >> /etc/apt/sources.list.d/yarn.list'
+  # - sudo sh -c 'echo "deb https://dl.yarnpkg.com/debian/ stable main" >> /etc/apt/sources.list.d/yarn.list'
   - export PATH="$HOME/.yarn/bin:$PATH"
   - sudo apt-get update -qq
   # - sudo apt-get install -y -qq yarn

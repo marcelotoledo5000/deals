@@ -26,10 +26,10 @@ before_script:
 language: ruby
 
 rvm:
-  - 2.7.1
+  - 2.7.0
 
 node_js:
-  - 14
+  - 12.17.0
 
 cache:
   bundler: true

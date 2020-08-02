@@ -2,9 +2,15 @@
   "name": "deals",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "4.2.2"
+    "@rails/ujs": "^6.0.3-1",
+    "@rails/webpacker": "4.2.2",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.11.0"
+  },
+  "engines": {
+    "node": "12.17.0",
+    "yarn": "1.22.4"
   }
 }

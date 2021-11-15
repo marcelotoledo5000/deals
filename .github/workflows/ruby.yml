@@ -61,13 +61,13 @@ jobs:
         RUBYOPT: -W0
       run: |
         cp config/database.github.yml config/database.yml
-        cp config/application.github.yml config/application.yml
         bundle exec rails db:test:purge db:migrate
         yarn --frozen-lockfile
 
-    - name: Run Rubocop linter
-      run: |
-        bin/rubocop --parallel
+    # Temporarily disabled
+    # - name: Run Rubocop linter
+    #   run: |
+    #     bundle exec rubocop
 
     # Temporarily disabled
     # - name: Run unit tests with Jest [frontend]

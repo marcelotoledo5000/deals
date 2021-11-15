@@ -12,14 +12,14 @@ To run on Heroku, [access here](https://mydeals.herokuapp.com/)
 ## Technical Informations and dependencies
 
 ``` code
-* The Rails gem       # version 6.0
-* Capybara:           # version 3.30
-* RSpec               # version 4.0.0
-* Rubocop             # version 0.82.0
 * The Ruby language   # version 3.0.2
+* The Rails gem       # version 6.1
+* Capybara:           # version 3.36
+* RSpec-Rails         # version 5.0.2
+* Rubocop             # version 1.22.3
 * PostgreSQL          # version 10
-* Docker              # version 19.03.8-ce
-* Docker Compose      # version 1.25.5
+* Docker              # version 20.10.9
+* Docker Compose      # version 2.0.1
 ```
 
 ## To use

@@ -24,5 +24,6 @@ feature 'User set a deal as lost' do
   end
 
   xscenario 'should cant lost deals from other users' do
+    # pending
   end
 end

@@ -24,5 +24,6 @@ feature 'User set a deal as won' do
   end
 
   xscenario 'should cant won deals from other users' do
+    # pending
   end
 end

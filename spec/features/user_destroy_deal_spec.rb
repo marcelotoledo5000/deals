@@ -21,5 +21,6 @@ feature 'User destroy a deal' do
   end
 
   xscenario 'should cant delete deals from other users' do
+    # pending
   end
 end

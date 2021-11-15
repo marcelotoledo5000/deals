@@ -1,0 +1,74 @@
+name: Ruby
+
+on:
+  push:
+    branches: [development, master]
+  pull_request:
+    branches: [development, master]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.7', '3.0'] # WARNING: this option use double billable time on Actions
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Ruby, install bundler and gems
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+    - name: Set Timezone to -3
+      uses: szenius/set-timezone@v1.0
+      with:
+        timezoneLinux: 'America/Sao_Paulo'
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        check-latest: true
+
+    - name: Install PostgreSQL client
+      run: |
+        sudo apt-get -yqq install libpq-dev
+
+    - name: Install dependencies
+      run: |
+        sudo apt install librsvg2-bin
+
+    - name: Run migrations
+      env:
+        RAILS_ENV: test
+        RUBYOPT: -W0
+      run: |
+        cp config/database.github.yml config/database.yml
+        cp config/application.github.yml config/application.yml
+        bundle exec rails db:test:purge db:migrate
+        yarn --frozen-lockfile
+
+    - name: Run Rubocop linter
+      run: |
+        bin/rubocop --parallel
+
+    - name: Run unit tests with Rspec [backend]
+      env:
+        RAILS_ENV: test
+      run: bundle exec rspec

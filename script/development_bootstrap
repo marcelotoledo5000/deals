@@ -8,7 +8,6 @@ bundle check || bundle install
 chown -R $USER:$USER .
 
 echo "Configuring webpacker"
-bundle exec rails webpacker:install
 yarn install --check-files
 
 echo "Creating databases"

@@ -1,7 +1,7 @@
-# https://github.com/marcelotoledo5000/Dockerfiles
-# https://hub.docker.com/repository/docker/skygvinn/alpine3-ruby2.7-nodejs
+# https://github.com/marcelotoledo5000/Dockerfiles/blob/master/alpine3.14-ruby3.0-node14-yarn1.22/Dockerfile
+# https://hub.docker.com/repository/docker/skygvinn/alpine3.14-ruby3.0-node14.18-yarn1.22
 
-version: '3.8'
+version: '3.9'
 
 services:
   db:
@@ -10,7 +10,8 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
   server:
-    image: skygvinn/alpine3-ruby2.7-nodejs:v1.0
+    # image: skygvinn/alpine3.14-ruby3.0-node14.18-yarn1.22:v1.0
+    build: .
     container_name: deals
     ports:
       - "3000:3000"

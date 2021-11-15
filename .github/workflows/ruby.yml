@@ -51,10 +51,6 @@ jobs:
       run: |
         sudo apt-get -yqq install libpq-dev
 
-    - name: Install dependencies
-      run: |
-        sudo apt install librsvg2-bin
-
     - name: Run migrations
       env:
         RAILS_ENV: test
@@ -62,7 +58,7 @@ jobs:
       run: |
         cp config/database.github.yml config/database.yml
         bundle exec rails db:test:purge db:migrate
-        yarn --frozen-lockfile
+        yarn install
 
     # Temporarily disabled
     # - name: Run Rubocop linter

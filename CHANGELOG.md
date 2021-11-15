@@ -1,4 +1,14 @@
-# deals 0.1.2 (Mai 03, 2020)
+# deals 0.2.0 (Nov 14, 2021)
+
+* Update Ruby version
+* Updated a lot gems
+* Updated docker-compose
+* Remove Travis-CI
+* Remove CodeClimate
+
+  *Marcelo Toledo*
+
+## deals 0.1.2 (Mai 03, 2020)
 
 * Update Ruby version
 * Update Rubocop and Cops

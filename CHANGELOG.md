@@ -1,8 +1,16 @@
-# deals 0.2.0 (Nov 14, 2021)
+# deals 0.2.1 (Nov 15, 2021)
+
+* Update Puma and Webpacker
+* Update JS setup
+* Update docker-compose
+* Add Dockerfile
+
+  *Marcelo Toledo*
+
+## deals 0.2.0 (Nov 14, 2021)
 
 * Update Ruby version
 * Updated a lot gems
-* Updated docker-compose
 * Remove Travis-CI
 * Remove CodeClimate
 

@@ -44,3 +44,6 @@ yarn-debug.log*
 /public/assets
 /public/packs
 /public/packs-test
+
+# some tools
+.tool-versions

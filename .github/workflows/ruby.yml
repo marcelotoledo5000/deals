@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby-version: ['2.7', '3.0'] # WARNING: this option use double billable time on Actions
+        # ruby-version: ['2.7', '3.0'] # WARNING: this option use double billable time on Actions
+        ruby-version: ['3.0']
 
     services:
       postgres:
@@ -68,7 +69,21 @@ jobs:
       run: |
         bin/rubocop --parallel
 
+    # Temporarily disabled
+    # - name: Run unit tests with Jest [frontend]
+    #   env:
+    #     RAILS_ENV: test
+    #   uses: stefanoeb/jest-action@1.0.4 # runs: yarn jest
+
     - name: Run unit tests with Rspec [backend]
       env:
         RAILS_ENV: test
       run: bundle exec rspec
+
+    # https://github.com/rubysec/bundler-audit#readme
+    # Add or Replace any other security checks here
+    # Temporarily disabled
+    # - name: Run security checks
+    #   run: |
+    #     bundle exec bundle-audit check --update
+    #     bundle exec brakeman -q -i config/brakeman.ignore

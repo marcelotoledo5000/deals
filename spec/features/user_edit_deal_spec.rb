@@ -40,5 +40,6 @@ feature 'User edit a deal' do
   end
 
   xscenario 'should cant edit deals from other users' do
+    # pending
   end
 end

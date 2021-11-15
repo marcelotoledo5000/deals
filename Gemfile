@@ -13,11 +13,20 @@ gem 'faraday'
 gem 'jbuilder'
 gem 'jquery-rails', '~> 4.3'
 gem 'pg', '~> 1.2'
-gem 'puma', '~> 4.3'
+gem 'puma'
 gem 'rails', '~> 6.1.4'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5.2'
-gem 'webpacker', '~> 5.0'
+gem 'webpacker'
+
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+
+# Use Active Model has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'capybara'

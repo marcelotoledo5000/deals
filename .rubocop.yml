@@ -17,9 +17,6 @@ AllCops:
 
   UseCache: false
 
-Capybara/FeatureMethods:
-  EnabledMethods: ['feature', 'scenario', 'xscenario','given', 'background']
-
 Layout/DotPosition:
   EnforcedStyle: trailing
 

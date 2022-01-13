@@ -1,6 +1,6 @@
 # TO USE: skygvinn/alpine3.14-ruby3.0-node14.18-yarn1.22:v1.0
 
-FROM ruby:3.0-alpine3.14
+FROM ruby:3.0.2-alpine3.14
 
 LABEL name="Alpine3.14-Ruby-3.0-Node14.18-Yarn1.22" \
       version="1.0" \
@@ -27,8 +27,6 @@ RUN echo "alias reload='source ~/.zshrc'" >> ~/.zshrc
 RUN echo "alias rails='bundle exec rails'" >> ~/.zshrc
 RUN echo "alias vim='vi'" >> ~/.zshrc
 RUN echo "/bin/zsh" >> ~/.zshrc
-
-ENTRYPOINT /bin/zsh
 
 EXPOSE 3000
 

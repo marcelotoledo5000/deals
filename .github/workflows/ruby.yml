@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # ruby-version: ['2.7', '3.0'] # WARNING: this option use double billable time on Actions
-        ruby-version: ['3.0']
+        ruby-version: ['3.0.2']
 
     services:
       postgres:

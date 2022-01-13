@@ -10,7 +10,6 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
   server:
-    # image: skygvinn/alpine3.14-ruby3.0-node14.18-yarn1.22:v1.0
     build: .
     container_name: deals
     ports:

@@ -1,4 +1,11 @@
-# deals 0.2.1 (Nov 15, 2021)
+# deals 0.2.2 (Jan 12, 2022)
+
+* Fix Ruby version
+* Update Rubocop setup
+
+  *Marcelo Toledo*
+
+## deals 0.2.1 (Nov 15, 2021)
 
 * Update Puma and Webpacker
 * Update JS setup

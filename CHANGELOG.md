@@ -1,4 +1,4 @@
-# deals 0.2.3 (Jan 13, 2022)
+# deals 0.2.3 (Feb 12, 2022)
 
 * Update gems version
 * Update yarn packages

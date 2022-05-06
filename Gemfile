@@ -19,15 +19,6 @@ gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5.2'
 gem 'webpacker'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
 group :development, :test do
   gem 'capybara'
   gem 'codecov', require: false
@@ -48,7 +39,6 @@ end
 group :development do
   gem 'brakeman'
   gem 'listen'
-  # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler'
   gem 'spring'
   gem 'web-console'

@@ -1,4 +1,13 @@
-# deals 0.2.3 (Feb 12, 2022)
+# deals 0.2.4 (May 06, 2022)
+
+* Update gems version
+* Update yarn packages
+* Update coverage
+* Setup spec_helper
+
+  *Marcelo Toledo*
+
+## deals 0.2.3 (Feb 12, 2022)
 
 * Update gems version
 * Update yarn packages

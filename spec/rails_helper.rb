@@ -3,7 +3,11 @@
 require 'simplecov'
 require 'codecov'
 
-SimpleCov.start do
+SimpleCov.start 'rails' do
+  add_filter '/channels/'
+  add_filter '/jobs/'
+  add_filter '/mailers/'
+
   enable_coverage :branch
   SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
     [

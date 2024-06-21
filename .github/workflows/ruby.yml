@@ -79,11 +79,20 @@ jobs:
     - uses: codecov/codecov-action@v4
       with:
         fail_ci_if_error: true # optional (default = false)
-        # files: ./coverage1.xml,./coverage2.xml # optional
+        files: ${{ github.workspace }}/codecov_report.json # optional
         flags: unittests # optional
         name: codecov-umbrella # optional
         token: ${{ secrets.CODECOV_TOKEN }} # required
         verbose: true # optional (default = false)
+        # Manual overrides for these parameters are needed because automatic detection
+        # in codecov-action does not work for non-`pull_request` workflows.
+        # In `main` branch push, these default to empty strings since we want to run
+        # the analysis on HEAD.
+        override_commit: ${{ steps.parse_previous_artifacts.outputs.override_commit || '' }}
+        override_pr: ${{ steps.parse_previous_artifacts.outputs.override_pr || '' }}
+        working-directory: ${{ github.workspace }}/coverage
+        # Location where coverage report files are searched for
+        directory: ${{ github.workspace }}
 
     # https://github.com/rubysec/bundler-audit#readme
     # Add or Replace any other security checks here

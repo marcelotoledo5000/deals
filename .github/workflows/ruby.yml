@@ -74,7 +74,7 @@ jobs:
     - name: Run unit tests with Rspec [backend]
       env:
         RAILS_ENV: test
-        TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       run: bundle exec rspec
 
     # This stores the coverage report in artifacts. The actual upload to Codecov

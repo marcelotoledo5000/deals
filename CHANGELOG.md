@@ -1,3 +1,10 @@
+# deals 0.2.5 (June 21, 2024)
+
+* Update gems version
+* Fix coverage and Github Actions workflow
+
+  *Marcelo Toledo*
+
 # deals 0.2.4 (May 06, 2022)
 
 * Update gems version

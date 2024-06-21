@@ -28,7 +28,7 @@ jobs:
           --health-retries 5
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Setup Ruby, install bundler and gems
       uses: ruby/setup-ruby@v1
@@ -75,6 +75,15 @@ jobs:
       env:
         RAILS_ENV: test
       run: bundle exec rspec
+
+    - uses: codecov/codecov-action@v4
+      with:
+        fail_ci_if_error: true # optional (default = false)
+        # files: ./coverage1.xml,./coverage2.xml # optional
+        flags: unittests # optional
+        name: codecov-umbrella # optional
+        token: ${{ secrets.CODECOV_TOKEN }} # required
+        verbose: true # optional (default = false)
 
     # https://github.com/rubysec/bundler-audit#readme
     # Add or Replace any other security checks here
